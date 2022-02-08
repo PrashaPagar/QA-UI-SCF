@@ -1,0 +1,207 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-02-08T15:38:06.476Z",
+    "end": "2022-02-08T15:42:40.525Z",
+    "duration": 274049,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333334,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8049a89e-1b9a-4fa3-8823-0a1bf99f2ae8",
+      "title": "",
+      "fullFile": "cypress/integration/e2e-flows/cancelledTransaction.spec.js",
+      "file": "cypress/integration/e2e-flows/cancelledTransaction.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "03ffdc47-ab3c-41b8-968f-aa93b494203f",
+          "title": "Cancelled Transaction flow--->",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login as an Supplier user",
+              "fullTitle": "Cancelled Transaction flow---> Login as an Supplier user",
+              "timedOut": null,
+              "duration": 60764,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginObj.login(config.baseURI, config.SupplierUser, config.Password);\ncy.location('pathname').should('have.string', '/scf/invoices/available'); //--Landing URL",
+              "err": {},
+              "uuid": "dac2c2d8-628b-40f4-a085-b71b5cf1f098",
+              "parentUUID": "03ffdc47-ab3c-41b8-968f-aa93b494203f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Import Invoices",
+              "fullTitle": "Cancelled Transaction flow---> Import Invoices",
+              "timedOut": null,
+              "duration": 29209,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "supplierObj.importinvoices().click();\ncy.get('button span').contains('cloud_upload').should('be.visible').click();\ncy.addInvoice(config.mediumWait); //Importing Invoice\ncy.wait(5000);\nsupplierObj.invoiceStatusAfterImport(); // Check status of invoice after import\nsingout.singOutUser(config.SupplierUser); // sign out",
+              "err": {},
+              "uuid": "c0c78347-4c4d-4796-85a8-38be03ed212d",
+              "parentUUID": "03ffdc47-ab3c-41b8-968f-aa93b494203f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login as an Admin user",
+              "fullTitle": "Cancelled Transaction flow---> Login as an Admin user",
+              "timedOut": null,
+              "duration": 20410,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginObj.login(config.baseURI, config.AdminUser, config.Password);\ncy.location('pathname').should('have.string', '/scf/facilities'); //Landing URL check",
+              "err": {},
+              "uuid": "a3f82dac-7cfc-4b52-81b3-ac64664f6c88",
+              "parentUUID": "03ffdc47-ab3c-41b8-968f-aa93b494203f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Open Facility---> Push Invoices",
+              "fullTitle": "Cancelled Transaction flow---> Open Facility---> Push Invoices",
+              "timedOut": null,
+              "duration": 44926,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "commonObj.showAllRow(); // Full page view\ncommonObj.openFacility(config.facilityName, config.subFacilityName); //Open Facility\nadminObj.facilityview();\nadminObj.facilitysubtab();\ncommonObj.openSubFacility(config.subFacilityName);\npushInvoice.openInvoicesGrid();\ncommonObj.showAllRow();\nadminObj.invoiceState(); // Checked Invoice state before pushing invoices\npushInvoice.pushInvoice(); // Push all available invoices\nsingout.singOutUser(config.AdminUser);",
+              "err": {},
+              "uuid": "1ddfa405-30ad-4244-9e04-ae95b451617c",
+              "parentUUID": "03ffdc47-ab3c-41b8-968f-aa93b494203f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login as an Supplier ---> Accept invoices",
+              "fullTitle": "Cancelled Transaction flow---> Login as an Supplier ---> Accept invoices",
+              "timedOut": null,
+              "duration": 36862,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginObj.login(config.baseURI, config.SupplierUser, config.Password);\ncy.location('pathname').should('have.string', '/scf/invoices/available');\nsupplierObj.invoiceStateAvailable(); // to check invoice status- Available\nsendinvoiceObj.sendInvoices(); // Send all avaialble invoices to Admin\nsingout.singOutUser(config.SupplierUser);",
+              "err": {},
+              "uuid": "a1af6a9e-c172-4d9a-a533-ce596df482ef",
+              "parentUUID": "03ffdc47-ab3c-41b8-968f-aa93b494203f",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Admin Login- Cancelled Transaction",
+              "fullTitle": "Cancelled Transaction flow---> Admin Login- Cancelled Transaction",
+              "timedOut": null,
+              "duration": 66672,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\e2e-flows\\\\cancelledTransaction.spec.js\\\\Cancelled Transaction flow--- -- Admin Login- Cancelled Transaction (failed).png\"\n      }\n    ]\n  ]\n}",
+              "code": "loginObj.login(config.baseURI, config.AdminUser, config.Password);\ncy.location('pathname').should('have.string', '/scf/facilities');\ncommonObj.showAllRow();\ncommonObj.openFacility(config.facilityName, config.subFacilityName);\nadminObj.facilityview();\nadminObj.facilitysubtab();\ncommonObj.openSubFacility(config.subFacilityName);\nadminObj.transactionTab();\nadminObj.invoiceStateAccepted();\nadminObj.cancelledTransaction(); // Mark Transaction as cancelled\ncy.reload();\nadminObj.transactionStateCancelled(); // Transaction status \nsingout.singOutUser(config.AdminUser);",
+              "err": {
+                "message": "CypressError: Timed out after waiting `100000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `100000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.",
+                "estack": "CypressError: Timed out after waiting `100000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `100000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.json` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n    at timedOutWaitingForPageLoad (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:157134:72)\n    at https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:157447:16\n    at tryCatcher (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:13196:23)\n    at https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:8318:41\n    at tryCatcher (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:13196:23)\n    at Promise._settlePromiseFromHandler (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:11131:31)\n    at Promise._settlePromise (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:11188:18)\n    at Promise._settlePromise0 (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:11233:10)\n    at Promise._settlePromises (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:11309:18)\n    at _drainQueueStep (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:7903:12)\n    at _drainQueue (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:7896:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:7912:5)\n    at Async.drainQueues (https://lqx-webui-test2.azurewebsites.net/__cypress/runner/cypress_runner.js:7782:14)\nFrom Your Spec Code:\n    at adminObject.cancelledTransaction (https://lqx-webui-test2.azurewebsites.net/__cypress/tests?p=cypress\\integration\\e2e-flows\\cancelledTransaction.spec.js:504:59)\n    at Context.eval (https://lqx-webui-test2.azurewebsites.net/__cypress/tests?p=cypress\\integration\\e2e-flows\\cancelledTransaction.spec.js:241:14)",
+                "diff": null
+              },
+              "uuid": "493f984d-02e4-4525-894c-9c7294acf436",
+              "parentUUID": "03ffdc47-ab3c-41b8-968f-aa93b494203f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "dac2c2d8-628b-40f4-a085-b71b5cf1f098",
+            "c0c78347-4c4d-4796-85a8-38be03ed212d",
+            "a3f82dac-7cfc-4b52-81b3-ac64664f6c88",
+            "1ddfa405-30ad-4244-9e04-ae95b451617c",
+            "a1af6a9e-c172-4d9a-a533-ce596df482ef"
+          ],
+          "failures": [
+            "493f984d-02e4-4525-894c-9c7294acf436"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 258843,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

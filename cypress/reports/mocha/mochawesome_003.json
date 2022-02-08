@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-08T15:54:29.720Z",
+    "end": "2022-02-08T15:55:42.078Z",
+    "duration": 72358,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8b9cd10a-5fde-4a13-a5dc-5fa4a849b755",
+      "title": "",
+      "fullFile": "cypress/integration/e2e-flows/scf-admin-tabs.spec.js",
+      "file": "cypress/integration/e2e-flows/scf-admin-tabs.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "69e1bc1c-84de-4aab-bb8c-88c52e93ace9",
+          "title": "Admin Tabs validations--->",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login as an Admin user",
+              "fullTitle": "Admin Tabs validations---> Login as an Admin user",
+              "timedOut": null,
+              "duration": 30012,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginObj.login(config.baseURI, config.AdminUser, config.Password);\ncy.location('pathname').should('have.string', '/scf/facilities');",
+              "err": {},
+              "uuid": "9e4e5bbf-c89c-43d2-9161-108563f104fa",
+              "parentUUID": "69e1bc1c-84de-4aab-bb8c-88c52e93ace9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Admin tabs scenarios",
+              "fullTitle": "Admin Tabs validations---> Verify Admin tabs scenarios",
+              "timedOut": null,
+              "duration": 38935,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "commonObj.showAllRow();\ncommonObj.openFacility(config.facilityName, config.subFacilityName);\nadminObj.selectFacility();\nadminObj.selectSubFacTabs();\nadminObj.transactionSubTab();\nadminObj.obligorSubTab();\nadminObj.sellerSubTab();\nadminObj.relationshipSubTab();\nadminObj.funderSubTab();\nadminObj.assetTabDetails();\nadminObj.labelsPageHeader();\nadminObj.userProfile();\nsingout.singOutUser(config.AdminUser);",
+              "err": {},
+              "uuid": "a350561f-5f7b-47ae-a2f8-d1d166cbb1c4",
+              "parentUUID": "69e1bc1c-84de-4aab-bb8c-88c52e93ace9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9e4e5bbf-c89c-43d2-9161-108563f104fa",
+            "a350561f-5f7b-47ae-a2f8-d1d166cbb1c4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 68947,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

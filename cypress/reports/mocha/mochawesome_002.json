@@ -1,0 +1,202 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 6,
+    "passes": 6,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-02-08T15:48:17.944Z",
+    "end": "2022-02-08T15:54:24.117Z",
+    "duration": 366173,
+    "testsRegistered": 6,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f1ad6710-3e36-43ee-9b7f-9f7745e0f111",
+      "title": "",
+      "fullFile": "cypress/integration/e2e-flows/notFundedByAdmin.spec.js",
+      "file": "cypress/integration/e2e-flows/notFundedByAdmin.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "55fb1fec-5dd3-499b-bcf2-8b7b64de82d8",
+          "title": "Not Funded By Admin flow--->",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login as an Supplier user",
+              "fullTitle": "Not Funded By Admin flow---> Login as an Supplier user",
+              "timedOut": null,
+              "duration": 50935,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginObj.login(config.baseURI, config.SupplierUser, config.Password);\ncy.location('pathname').should('have.string', '/scf/invoices/available'); //--Landing URL",
+              "err": {},
+              "uuid": "e500f208-5819-4e33-b8bd-d10ce281759b",
+              "parentUUID": "55fb1fec-5dd3-499b-bcf2-8b7b64de82d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Import Invoices",
+              "fullTitle": "Not Funded By Admin flow---> Import Invoices",
+              "timedOut": null,
+              "duration": 52098,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "supplierObj.importinvoices().click();\ncy.get('button span').contains('cloud_upload').should('be.visible').click();\ncy.addInvoice(config.mediumWait); //Importing Invoice\ncy.wait(5000);\nsupplierObj.invoiceStatusAfterImport(); // Check status of invoice after import\nsingout.singOutUser(config.SupplierUser); // sign out",
+              "err": {},
+              "uuid": "5943fcf0-9b4c-436a-b1dc-b0e8a1d77f6e",
+              "parentUUID": "55fb1fec-5dd3-499b-bcf2-8b7b64de82d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login as an Admin user",
+              "fullTitle": "Not Funded By Admin flow---> Login as an Admin user",
+              "timedOut": null,
+              "duration": 29974,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginObj.login(config.baseURI, config.AdminUser, config.Password);\ncy.location('pathname').should('have.string', '/scf/facilities'); //Landing URL check",
+              "err": {},
+              "uuid": "47dd0fab-1e46-4673-a9b8-ff76a271d610",
+              "parentUUID": "55fb1fec-5dd3-499b-bcf2-8b7b64de82d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Open Facility---> Push Invoices",
+              "fullTitle": "Not Funded By Admin flow---> Open Facility---> Push Invoices",
+              "timedOut": null,
+              "duration": 68142,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "commonObj.showAllRow(); // Full page view\ncommonObj.openFacility(config.facilityName, config.subFacilityName); //Open Facility\nadminObj.facilityview();\nadminObj.facilitysubtab();\ncommonObj.openSubFacility(config.subFacilityName);\npushInvoice.openInvoicesGrid();\ncommonObj.showAllRow();\nadminObj.invoiceState(); // Checked Invoice state before pushing invoices\npushInvoice.pushInvoice(); // Push all available invoices\nsingout.singOutUser(config.AdminUser);",
+              "err": {},
+              "uuid": "653a1e98-f6db-45e7-98b1-c61e1e06e276",
+              "parentUUID": "55fb1fec-5dd3-499b-bcf2-8b7b64de82d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login as an Supplier ---> Accept invoices",
+              "fullTitle": "Not Funded By Admin flow---> Login as an Supplier ---> Accept invoices",
+              "timedOut": null,
+              "duration": 43028,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginObj.login(config.baseURI, config.SupplierUser, config.Password);\ncy.location('pathname').should('have.string', '/scf/invoices/available');\nsupplierObj.invoiceStateAvailable(); // to check invoice status- Available\nsendinvoiceObj.sendInvoices(); // Send all avaialble invoices to Admin\nsingout.singOutUser(config.SupplierUser);",
+              "err": {},
+              "uuid": "811e62f8-f046-427c-822a-23ef9e063639",
+              "parentUUID": "55fb1fec-5dd3-499b-bcf2-8b7b64de82d8",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Admin Login- Funding Request--> Mark as not for funded",
+              "fullTitle": "Not Funded By Admin flow---> Admin Login- Funding Request--> Mark as not for funded",
+              "timedOut": null,
+              "duration": 95521,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginObj.login(config.baseURI, config.AdminUser, config.Password);\ncy.location('pathname').should('have.string', '/scf/facilities');\ncommonObj.showAllRow();\ncommonObj.openFacility(config.facilityName, config.subFacilityName);\ncy.wait(5000);\nadminObj.facilityview();\nadminObj.facilitysubtab();\ncommonObj.openSubFacility(config.subFacilityName);\nadminObj.transactionTab();\nadminObj.invoiceStateAccepted();\nadminObj.fundingRequestPageDetails();\ncy.reload();\nadminObj.invoiceStateFundingRequested();\nadminObj.notForFunded(); // Mark as not for funded\nsingout.singOutUser(config.AdminUser);",
+              "err": {},
+              "uuid": "fc326b24-8924-4666-bac5-da9e478199c5",
+              "parentUUID": "55fb1fec-5dd3-499b-bcf2-8b7b64de82d8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e500f208-5819-4e33-b8bd-d10ce281759b",
+            "5943fcf0-9b4c-436a-b1dc-b0e8a1d77f6e",
+            "47dd0fab-1e46-4673-a9b8-ff76a271d610",
+            "653a1e98-f6db-45e7-98b1-c61e1e06e276",
+            "811e62f8-f046-427c-822a-23ef9e063639",
+            "fc326b24-8924-4666-bac5-da9e478199c5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 339698,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

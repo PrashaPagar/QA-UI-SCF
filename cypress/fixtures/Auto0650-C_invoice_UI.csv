@@ -1,4 +1,0 @@
-Obligor Name,Seller Name,Invoice Number,Currency Code,Face Value,Adjustment Amount,Invoice Date,Invoice Due Date,Anticipated Payment Date(MM/DD/YYYY),Anticipated Settlement Date(MM/DD/YYYY),Currency Code,Buyer Country Code,Supplier Country Code,Governing Law Code
-SCF Buyer UI,SCF Supplier UI,Auto06501,USD,2266.61,0,10/21/2021,5/29/2022,,,USD,US,US,US
-SCF Buyer UI,SCF Supplier UI,Auto06502,USD,2511.89,0,1/21/2021,5/30/2022,,,USD,US,US,US
-SCF Buyer UI,SCF Supplier UI,Auto06503,USD,2266.61,0,10/21/2021,2/21/2022,,,USD,US,US,US
