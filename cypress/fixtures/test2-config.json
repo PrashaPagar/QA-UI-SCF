@@ -1,0 +1,17 @@
+{
+  "baseURI": "https://lqx-webui-test2.azurewebsites.net/",
+  "Password":"Liquidx123",
+  "SupplierUser": "lqxnga+SCFSupplierUI@gmail.com",
+  "BuyerUser": "lqxnga+SCF_Buyer_UI@gmail.com",
+  "FunderUser": "lqxnga+SCFFunderUI1@gmail.com",
+  "AdminUser": "lqxscf+apiAdmin1@gmail.com" ,
+  "SupplierID": 20549,
+  "FunderId":20550,
+  "FacilityId": 358,
+  "SubFacilityId": 12531,
+  "facilityName": "QA_UI_Automation_SCF",
+  "subFacilityName": "QA_UI_SubFac",
+  "mediumWait": "10000",
+  "funderstate": "Funding Requested",
+  "accepetedState": "Accepted"
+}

@@ -1,0 +1,24 @@
+{
+    "defaultCommandTimeout": 120000,
+    "pageLoadTimeout":100000, 
+    "responseTimeout" : 20000, 
+    "chromeWebSecurity": false,
+    "videoCompression": false,
+    "storage-container": "ui-automation", 
+     "env": {
+        "test-env": "test2"
+      },
+    
+      "reporter": "cypress-multi-reporters",
+      "reporterOptions": {
+          "reporterEnabled": "mochawesome",
+          "mochawesomeReporterOptions": {
+              "reportDir": "cypress/reports/mocha",
+              "quite": true,
+              "overwrite": false,
+              "html": true,
+              "json": true
+          }
+      }
+   
+}
